@@ -2,16 +2,17 @@
 
 set -e
 
-if [[ -z "$APP_VERSION" ]]; then
-  echo "Set the APP_VERSION env variable."
-  exit 1
-fi
 if [[ -z "$APP_NAME" ]]; then
   echo "Set the APP_VERSION env variable."
   exit 1
 fi
+if [[ ! -f "./git-version" ]]; then
+  echo "Make sure to run codacy/git-version@2.2.0 prior to this"
+  exit 1
+fi
 
-echo "Setting up"
+APP_VERSION=$(./git-version)
+echo "Setting up for application version: ${APP_VERSION}"
 BUILD_PATH=${GITHUB_WORKSPACE}/.build
 mkdir -p ${BUILD_PATH}
 
