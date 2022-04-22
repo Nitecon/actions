@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/Nitecon/actions/compare/v1.0.0...v1.0.1) (2022-04-22)
+
+
+### Bug Fixes
+
+* update to use semantic-version semantics ([619334f](https://github.com/Nitecon/actions/commit/619334f7df4fc5bcf6bc018d0f0e3a0bb831ef1b))
+
 # 1.0.0 (2022-04-22)
 
 
