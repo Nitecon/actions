@@ -21,5 +21,8 @@
 			}
 		]
 	],
-    "preset": "angular"
+    "preset": "angular",
+    "release": {
+        "branches": ["master", "main"]
+      }
 }
