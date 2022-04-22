@@ -2,12 +2,11 @@
 
 set -e
 
-if [[ -z "$APP_SEMVER" ]]; then
-  echo "Make sure semantic-version already ran and make sure a separate step is added that sets the envar like:"
-  echo '      - name: Store App Version for future step use'
-  echo '        run: export APP_SEMVER=$(cat .VERSION) && echo "::set-env name=APP_SEMVER::$APP_SEMVER"'
+if [[ ! -f release_info.txt ]]; then
+  echo "you must dump the output from semver-release into a file in the root called release_info.txt"
   exit 1
 fi
+APP_SEMVER=$(cat release_info.txt|grep -v "###"|grep "#" |sed -e 's/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/')
 
 echo "Setting up for application version: ${APP_SEMVER}"
 BUILD_PATH=${GITHUB_WORKSPACE}/.build
