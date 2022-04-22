@@ -13,7 +13,7 @@ BUILD_PATH=${GITHUB_WORKSPACE}/.build
 mkdir -p ${BUILD_PATH}
 
 GO111MODULE=on GOOS=linux GOARCH=amd64 go build -ldflags "-s -w -X main.version=${APP_SEMVER}" -o ${GITHUB_WORKSPACE}/.build/bin/${APP_NAME} cmd/main.go
-cd .build/ && zip -r ${APP_NAME}.zip ./*
+cd ${BUILD_PATH} && zip -r ${APP_NAME}.zip ./*
 
 echo "Build is complete"
-ls -al .build/
+ls -al ${BUILD_PATH}
