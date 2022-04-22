@@ -23,6 +23,9 @@
 	],
     "preset": "angular",
     "release": {
-        "branches": ["master", "main"]
+        "branches": [
+            {name: 'master'},
+            {name: 'main'}
+        ]
       }
 }
